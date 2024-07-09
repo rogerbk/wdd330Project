@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <link rel="stylesheet" href="/src/style.css">
+        <title>Recipe Search</title>
+     </head>
+    <body>
+        <!-- Displaying the recipe title, image, ingredients, and instructions -->
+<div class="container">
+    <h1><%= recipe.title %></h1>
+    <img src="<%= recipe.image %>" alt="<%= recipe.title %>" />
+    <h2> Ingredients </h2>
+    <ul>
+        <% recipe.extendedIngredients.forEach(ingredient => { %>
+            <li> <%= ingredient.original %></li>
+        <% }) %>
+    </ul>🟰
+
+    <h2> Instructions</h2>
+    <ol>
+        <% recipe.analyzedInstructions[0].steps.forEach(step => { %>
+            <li> <%= step.step %></li>
+        <% }) %>
+    </ol>
+</div>
+    </body>
+</html>
